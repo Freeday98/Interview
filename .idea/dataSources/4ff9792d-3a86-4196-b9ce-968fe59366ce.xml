@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="testprojectdb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="testprojectdb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="chatds"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="department"/>
+    <table id="9" parent="2" name="employee"/>
+    <column id="10" parent="8" name="idDepartment">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="11" parent="8" name="nameDepartment">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="12" parent="8" name="numOfEmployees">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="13" parent="8" name="idDepartment_UNIQUE">
+      <ColNames>idDepartment</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="14" parent="8" name="nameDepartment_UNIQUE">
+      <ColNames>nameDepartment</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="15" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idDepartment</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="16" parent="8" name="idDepartment_UNIQUE">
+      <ColNames>idDepartment</ColNames>
+      <UnderlyingIndexName>idDepartment_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="17" parent="8" name="nameDepartment_UNIQUE">
+      <ColNames>nameDepartment</ColNames>
+      <UnderlyingIndexName>nameDepartment_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="18" parent="9" name="idEmployee">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="9" name="firstNameEmployee">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="9" name="secondNameEmployee">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="9" name="contactMailEmployee">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="9" name="salaryEmployee">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="9" name="birthDateEmployee">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="9" name="departmentEmployee">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="25" parent="9" name="contactMailEmployee_UNIQUE">
+      <ColNames>contactMailEmployee</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="26" parent="9" name="departmentEmployee_idx">
+      <ColNames>departmentEmployee</ColNames>
+    </index>
+    <index id="27" parent="9" name="idEmployee_UNIQUE">
+      <ColNames>idEmployee</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idEmployee</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="29" parent="9" name="idEmployee_UNIQUE">
+      <ColNames>idEmployee</ColNames>
+      <UnderlyingIndexName>idEmployee_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="30" parent="9" name="contactMailEmployee_UNIQUE">
+      <ColNames>contactMailEmployee</ColNames>
+      <UnderlyingIndexName>contactMailEmployee_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="31" parent="9" name="departmentEmployee">
+      <ColNames>departmentEmployee</ColNames>
+      <RefSchemaName>testprojectdb</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>idDepartment</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>
